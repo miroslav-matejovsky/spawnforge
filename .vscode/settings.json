@@ -1,0 +1,23 @@
+{
+  "window.title": "${rootName}",
+  "editor.renderWhitespace": "all",
+  "editor.renderControlCharacters": true,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "workbench.editor.showTabs": "none",
+  "terminal.integrated.fontFamily": "MesloLGS Nerd Font",
+  "terminal.integrated.profiles.windows": {
+    "pwsh": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "pwsh",
+  "powershell.startAutomatically": true,
+  "powershell.integratedConsole.showOnStartup": false,
+  "cSpell.words": [
+    "golangci",
+    "gotestsum",
+    "testdox"
+  ],
+}
