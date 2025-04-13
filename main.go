@@ -1,6 +1,11 @@
 package main
 
+import "embed"
+
+//go:embed test/content
+var content embed.FS
+
 func main() {
-	// This is a simple Go program that prints "Hello, World!" to the console.
-	println("Hello, World!")
+	println(content.Name()) // Output: test/content
 }
+
