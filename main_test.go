@@ -9,12 +9,12 @@ import (
 )
 
 func TestEmbedFile(t *testing.T) {
-	require.Equal(t, "I am file", file)
+	require.Equal(t, "{}", string(config))
 }
 
 func TestEmbedDir(t *testing.T) {
 	// Read the directory content
-	dirContent, err := content.ReadDir("test/content")
+	dirContent, err := content.ReadDir("spawn/source")
 	require.NoError(t, err)
 
 	// Check the number of files in the directory
@@ -36,11 +36,11 @@ func TestCopyFs(t *testing.T) {
 	require.NoError(t, err)
 
 	// Check if the files exist in the temporary directory
-	require.FileExists(t, tmpDir+"/test/content/file.txt")
-	require.FileExists(t, tmpDir+"/test/content/another-file.txt")
+	require.FileExists(t, tmpDir+"/spawn/source/file.txt")
+	require.FileExists(t, tmpDir+"/spawn/source/another-file.txt")
 
 	// Read the content of the copied file
-	data, err := os.ReadFile(tmpDir + "/test/content/file.txt")
+	data, err := os.ReadFile(tmpDir + "/spawn/source/file.txt")
 	require.NoError(t, err)
 	require.Equal(t, "I am file", string(data))
 }

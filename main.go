@@ -8,10 +8,10 @@ import (
 	"path/filepath"
 )
 
-//go:embed all:test/content/file.txt
-var file string
+//go:embed spawn/config.json
+var config []byte
 
-//go:embed all:test/content
+//go:embed all:spawn/source
 var content embed.FS
 
 func copyFs(src fs.FS, dst string) error {
