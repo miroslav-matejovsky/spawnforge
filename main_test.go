@@ -1,14 +1,11 @@
 package main
 
 import (
-	"embed"
+	_ "embed"
 	"testing"
 
 	"github.com/stretchr/testify/require"
 )
-
-//go:embed test/content
-var content embed.FS
 
 //go:embed all:test/content/file.txt
 var file string
